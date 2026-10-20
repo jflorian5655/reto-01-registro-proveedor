@@ -93,7 +93,7 @@ Si no hay ruta o el maestro no tiene valor, el campo queda `faltante`. RN1 marca
 
 ## 7. Supuestos
 
-1. "Fecha de ejecución" = fecha del sistema (`FECHA_EJECUCION` la fija para pruebas). Un soporte con `vigencia_hasta` nula no vence.
+1. "Fecha de ejecución" = fecha del sistema (`FECHA_EJECUCION` la fija para pruebas). Un soporte con `vigencia_hasta` nula no vence. Ejemplo: con la fecha del PRD (2026-09-03) `co-industrias-delta` queda **listo para firma**; con una fecha posterior a 2026-09-30 la Cámara de Comercio vence y bloquea los tres casos, lo cual es el comportamiento esperado de RN3.
 2. Si hay varios soportes del mismo tipo, se usa el de vigencia más lejana. Si el archivo listado no existe en disco, el soporte cuenta como **ausente**.
 3. Los campos `requiere_confirmacion` **se escriben** en el formulario (RN1 dice "se llena con el NIT") y se listan en el checklist para revisión. Los `faltante` quedan vacíos.
 4. `listo_para_firma` depende solo de los soportes (RN3). Un paquete no listo **puede** enviarse en simulación si la analista lo confirma; `ENVIO-SIMULADO.md` deja constancia del estado y de los bloqueos.
