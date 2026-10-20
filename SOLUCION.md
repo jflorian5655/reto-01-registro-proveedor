@@ -114,17 +114,18 @@ Si no hay ruta o el maestro no tiene valor, el campo queda `faltante`. RN1 marca
 
 ## 9. Uso de IA
 
-| Asistente | Para qué |
+**Asistente elegido:** Claude Code con el modelo `claude-opus-5-5` de Anthropic. Lo elegí por su capacidad en desarrollo de software: entiende un PRD completo, propone arquitectura, escribe y prueba código de punta a punta, y explica cada decisión. Además lo uso a diario en los proyectos en los que trabajo actualmente, así que conozco bien sus fortalezas y sus límites. También tengo experiencia con ChatGPT y Gemini, pero para este reto preferí trabajar con una sola herramienta que opera directamente sobre el repositorio y la terminal.
+
+| Asistente | Tareas en este reto |
 |---|---|
-| Claude Code | Leer el PRD y los fixtures, proponer la arquitectura, escribir el código, `demo.ts`, los tests y la primera versión de esta documentación. |
+| Claude Code (`claude-opus-5-5`) | Análisis del PRD y de los fixtures, propuesta de arquitectura, implementación de herramientas, ciclo del agente, servidor y chat, `demo.ts` y pruebas, Dockerfile y despliegue en Render, y borrador de la documentación. Revisé y probé cada entrega antes de aceptarla. |
 
-**Lo que descarté de las propuestas y por qué:**
-- Usar el *Tool Runner* del SDK: amarra el ciclo a un proveedor. Escribí el ciclo propio.
-- Dejar que el modelo pase los valores al generar el formulario: riesgo de alucinación (ver decisión 1).
-- Cargar una librería de Markdown desde CDN en el front: dependencia externa por ~20 líneas de render propio.
-- Cualquier llamada a shell desde herramientas: prohibido por el PRD; todo es `fs` con rutas confinadas.
-
-> *Candidato: ajusta esta sección con tu uso real de asistentes.*
+**Lo que descarté de lo que se propuso y por qué:**
+- Usar el *Tool Runner* del SDK de Anthropic: amarra el ciclo del agente a un proveedor. Preferí un ciclo propio sobre la interfaz `ProveedorLLM`.
+- Que el modelo pasara los valores al generar el formulario: abría la puerta a valores inventados (ver decisión 1).
+- Cargar una librería de Markdown desde un CDN en el front: una dependencia externa para algo que se resuelve con unas 20 líneas.
+- Cualquier ejecución de comandos de shell desde las herramientas: el PRD lo prohíbe; todo es acceso a archivos con rutas confinadas.
+- Confiar solo en el prompt para pedir confirmación antes de enviar: lo reforcé en código (decisión 3).
 
 ## 10. Riesgos de llevarlo a producción
 
