@@ -2,8 +2,8 @@
 
 Agente conversacional que lee una solicitud de registro como proveedor, llena el formulario del cliente (Excel o PDF) desde el repositorio maestro, arma el paquete para firma y **pide confirmación** antes de cualquier envío (simulado).
 
-- **Link de prueba:** `<pendiente: URL del despliegue>`
-- **Clave de acceso:** si el despliegue define `ACCESS_KEY`, el chat la pide al entrar: `<pendiente>`
+- **Link de prueba:** https://reto-01-registro-proveedor-8boz.onrender.com/ (plan gratuito de Render: si estuvo inactivo, la primera carga tarda ~1 min)
+- **Clave de acceso:** `perxia-2026-jf` (el chat la pide al entrar)
 - Planteamiento y decisiones: [SOLUCION.md](SOLUCION.md)
 
 ## Levantar en local (un comando)
